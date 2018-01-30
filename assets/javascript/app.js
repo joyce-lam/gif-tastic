@@ -7,7 +7,7 @@ function createButtons() {
 
 	for (var i = 0; i < topics.length; i++) {
 		var btn = $("<button>");
-		btn.addClass("character");
+		btn.addClass("character btn");
 		btn.data("name", topics[i]);
 		btn.text(topics[i]);
 		$("#buttons").append(btn);

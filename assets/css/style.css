@@ -13,6 +13,21 @@ body {
 	height: 300px;
 }
 
+h1, h3 {
+	color: #e6b800;
+}
+
 .character.btn {
 	background-color: #e6b800;
+}
+
+label {
+	font-size: 18px;
+	color: #e6b800;
+}
+
+#add-gif {
+	background-color: #e6b800;
+	border: 1px solid transparent;
+    border-radius: 4px;
 }
