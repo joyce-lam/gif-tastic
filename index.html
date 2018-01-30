@@ -2,6 +2,7 @@
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GIFs</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
@@ -22,18 +23,60 @@
 <body>
   
     <div class="container">
-        <div id="buttons"></div>
+        <div class="row">
+            <div class="col-md-5">
+                <img id ="top-img" src="../gif-tastic/assets/images/harrypotter.png" alt="Harry Potter Logo">
+            </div>
 
-        <form id="gif-form">
-            <label for="input">Find your gif here:</label>
-            <input type="text" id="input"><br>
-            <input id="add-gif" type="submit" value="Add a gif">
-        </form>
+            <div class="col-md-1"></div>
 
+            <div class="col-md-4">
+                <img id="top-img" src="../gif-tastic/assets/images/harrypottercharacters.jpg" alt="Harry Potter Characters">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-11">
+                <div id="buttons"></div>
+            </div>
+        </div>
         
-        <div id="gif-view"></div>
+        <br>
+        
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-11">
+                <form id="gif-form">
+                    <label for="input">Find your gif here:</label>
+                    <input type="text" id="input"><br>
+                    <input id="add-gif" type="submit" value="Add a gif">
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="gif-view"></div>
+        </div>
+
 
     </div>
+
+
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="copyright">
+            <div class="container">
+            <p class="navbar-text" >
+                Powered by GIPHY
+            </p>
+            </div>
+        </div>
+    </div>
+
+
+    
 
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 
