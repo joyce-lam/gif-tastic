@@ -1,0 +1,18 @@
+body {
+	background-color: #660000;
+}
+
+.col-md-5 #top-img{
+	width: 500px;
+	height: 200px;
+	margin-top: 45px;
+}
+
+.col-md-4 #top-img {
+	width: 500px;
+	height: 300px;
+}
+
+.character.btn {
+	background-color: #e6b800;
+}
