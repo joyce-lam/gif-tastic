@@ -29,12 +29,16 @@ function displayGif() {
 		method: "GET"
 	}).then(function(response) {
 		console.log(response);
+		console.log(response.data[0].images.fixed_height_small_still.url);
 
 		for (var i = 0; i < 9; i++) {
-			var gifDiv = $("<div>");
-			gifDiv.addClass("gif-image");
+			var gifDiv = $("<img>");
+			gifDiv.addClass("gif");
 			gifDiv.data("index", i);
-			gifDiv.html("<img src=" + response.data[i].images.downsized_still.url + ">");
+			gifDiv.attr("src", response.data[i].images.fixed_height_small_still.url);
+			gifDiv.data("still", response.data[i].images.fixed_height_small_still.url);
+			gifDiv.data("animate", response.data[i].images.fixed_height_small.url);
+			gifDiv.data("state", "still");
 			$("#gif-view").append(gifDiv);
 
 			var ratingDiv = $("<div>");
@@ -45,5 +49,6 @@ function displayGif() {
 		}
 	})
 }
+
 
 
