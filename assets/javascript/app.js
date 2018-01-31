@@ -41,9 +41,8 @@ function displayGif() {
 			gifDiv.data("state", "still");
 			$("#gif-view").append(gifDiv);
 
-			var ratingDiv = $("<div>");
-			ratingDiv.addClass("rating");
-			ratingDiv.data("index", i);
+			var ratingDiv = $("<p>");
+			ratingDiv.addClass("rating caption");
 			ratingDiv.text("Rating: " + response.data[i].rating);
 			$("#gif-view").append(ratingDiv);
 		}
@@ -52,6 +51,7 @@ function displayGif() {
 	})
 }
 
+//function to listen to click on element with class=gif to kick off showAnimate function
 $(document).on("click", ".gif", showAnimate);
 
 function showAnimate() {
@@ -68,6 +68,7 @@ function showAnimate() {
 	}
 }
 
+//function to listen to click on element with id=add-gif to kick on createButtons function
 $("#add-gif").on("click", function(event) {
 	event.preventDefault();
 	var gif = $("#input").val().trim();
