@@ -21,6 +21,7 @@ $(document).on("click", ".character", displayGif);
 
 //function to display GIFs by ajax call to get data to create elements to hold the data to show on html
 function displayGif() {
+	$("#gif-view").empty();
 	var character = $(this).data("name");
 	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + character + "&api_key=HucJDNOr1gAN0XSUCBGBoj1ReC8PQa8Y&limit=10";
 
@@ -34,7 +35,6 @@ function displayGif() {
 		for (var i = 0; i < 9; i++) {
 			var gifDiv = $("<img>");
 			gifDiv.addClass("gif");
-			gifDiv.data("index", i);
 			gifDiv.attr("src", response.data[i].images.fixed_height_small_still.url);
 			gifDiv.data("still", response.data[i].images.fixed_height_small_still.url);
 			gifDiv.data("animate", response.data[i].images.fixed_height_small.url);
@@ -47,8 +47,26 @@ function displayGif() {
 			ratingDiv.text("Rating: " + response.data[i].rating);
 			$("#gif-view").append(ratingDiv);
 		}
+
+		console.log($(".gif").data("animate"));
 	})
 }
 
+$(document).on("click", ".gif", showAnimate);
 
+function showAnimate() {
+	console.log("show animate called");
+	console.log(this.attributes);
+	var state = $(this).data("state");
+
+	if (state === "still") {
+		console.log('it is still', $(this).data('animate'));
+		$(this).attr("src", $(this).data("animate"));
+		$(this).data("state", "animate");
+	} else {
+		console.log('it is not still');
+		$(this).attr("src", $(this).data("still"));
+		$(this).data("state", "still");
+	}
+}
 
