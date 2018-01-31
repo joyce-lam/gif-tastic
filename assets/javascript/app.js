@@ -55,8 +55,6 @@ function displayGif() {
 $(document).on("click", ".gif", showAnimate);
 
 function showAnimate() {
-	console.log("show animate called");
-	console.log(this.attributes);
 	var state = $(this).data("state");
 
 	if (state === "still") {
@@ -70,3 +68,9 @@ function showAnimate() {
 	}
 }
 
+$("#add-gif").on("click", function(event) {
+	event.preventDefault();
+	var gif = $("#input").val().trim();
+	topics.push(gif);
+	createButtons();
+})
