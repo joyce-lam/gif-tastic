@@ -44,14 +44,14 @@ function displayGif() {
             gifDiv.data("animate", response.data[i].images.fixed_height_small.url);
             gifDiv.data("state", "still");
             //append the image to the div
-            $(".wrap").append(gifDiv);
+            gifWrap.append(gifDiv);
 
             //create a p tag to hold rating
             var ratingDiv = $("<p>");
             ratingDiv.addClass("rating");
             ratingDiv.text("Rating: " + response.data[i].rating);
             //append the rating p tag to the div
-            $(".wrap").append(ratingDiv);
+            gifWrap.append(ratingDiv);
 
             //append the div wrapping the image and rating to the gif-view div
             $("#gif-view").append(gifWrap);
